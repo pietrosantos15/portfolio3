@@ -13,9 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('.hero-title span')) {
         initTypingEffect();
     }
-    
-    // Inicializar estrelas no fundo
-    createStars();
 });
 
 // Animações de scroll
@@ -95,7 +92,7 @@ function initSkillsAnimation() {
 }
 
 // Contadores animados (removido, já que não é utilizado no novo HTML)
-function initCounters() {}
+function initCounters() { }
 
 // Efeito de digitação
 function initTypingEffect() {
@@ -145,42 +142,6 @@ if (contactForm) {
     });
 }
 
-// Gerar estrelas animadas
-function createStars() {
-    const starsContainer = document.getElementById('starsBackground');
-    const numberOfStars = 100;
-
-    for (let i = 0; i < numberOfStars; i++) {
-        const star = document.createElement('div');
-        star.className = 'star';
-
-        // Posição aleatória
-        star.style.left = Math.random() * 100 + '%';
-        star.style.top = Math.random() * 100 + '%';
-
-        // Tamanho aleatório
-        const size = Math.random() * 3 + 1;
-        star.style.width = size + 'px';
-        star.style.height = size + 'px';
-
-        // Delay aleatório para animação
-        star.style.animationDelay = Math.random() * 3 + 's';
-
-        starsContainer.appendChild(star);
-    }
-
-    // Criar estrelas cadentes
-    for (let i = 0; i < 3; i++) {
-        const shootingStar = document.createElement('div');
-        shootingStar.className = 'shooting-star';
-
-        shootingStar.style.left = Math.random() * 100 + '%';
-        shootingStar.style.top = Math.random() * 50 + '%';
-        shootingStar.style.animationDelay = Math.random() * 8 + 's';
-
-        starsContainer.appendChild(shootingStar);
-    }
-}
 
 // Função para inicializar a visualização de imagens (lightbox)
 function initImageLightbox() {
@@ -193,7 +154,7 @@ function initImageLightbox() {
 
     // Adicionar evento de clique em todas as imagens com a classe 'curriculo-preview'
     document.querySelectorAll(".curriculo-preview").forEach(img => {
-        img.parentNode.addEventListener('click', function() {
+        img.parentNode.addEventListener('click', function () {
             modal.style.display = "block";
             modalImg.src = img.getAttribute('data-full-src') || img.src; // Usa data-full-src se existir
         });
@@ -232,7 +193,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('.hero-title span')) {
         initTypingEffect();
     }
-    createStars();
 
     // Adicionar a chamada para a nova função
     initImageLightbox();
